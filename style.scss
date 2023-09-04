@@ -1,0 +1,346 @@
+:root {
+  --clr-primary: #f9004d;
+  --clr-black: #333;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--clr-black);
+}
+
+// ---------------- header ----------------
+
+header {
+  padding: 1.2em 0;
+  box-shadow: 0 1px 10px 0 rgba($color: #000000, $alpha: 0.2);
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    ul {
+      display: flex;
+
+      a {
+        padding: 1em 1em 0.8em;
+        margin: 0 0.5em;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &::before {
+          content: "";
+          display: inline-block;
+          border-bottom: 1px solid var(--clr-primary);
+          width: 0;
+          height: 1px;
+          position: absolute;
+          bottom: 0;
+          transition: width 300ms;
+        }
+
+        &.active,
+        &:hover {
+          font-weight: bold;
+
+          &::before {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .login {
+      padding: 1em 2em 1.1em;
+      border-radius: 3em;
+      background-color: var(--clr-primary);
+      color: #fff;
+      line-height: 1em;
+    }
+  }
+}
+
+// ---------------- hero ----------------
+.hero {
+  .swiper {
+    height: 400px;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+// ---------------- welcome ----------------
+.welcome {
+  margin-top: 2em;
+
+  h1 {
+    margin: 1em 0;
+  }
+
+  p {
+    text-align: justify;
+  }
+}
+
+// ---------------- products ----------------
+.products {
+  margin-top: 3em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2em;
+
+  .card {
+    display: grid;
+    box-shadow: 0 0 10px 0 rgba($color: #000000, $alpha: 0.3);
+    border-radius: 1em;
+    padding: 2em;
+
+    img {
+      width: 100%;
+      height: 250px;
+      padding: 0 2em;
+      object-fit: scale-down;
+      margin-bottom: 2em;
+    }
+
+    h2 {
+      margin-bottom: 1em;
+    }
+
+    .flex-wrapper {
+      display: flex;
+      justify-content: space-between;
+
+      button {
+        color: var(--clr-primary);
+        background-color: transparent;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+// ---------------- signin ----------------
+
+.signin {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .wrapper {
+    box-shadow: 0 0 10px 0 rgba($color: #000000, $alpha: 0.3);
+    padding: 2em;
+    border-radius: 1em;
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1em;
+    }
+
+    form {
+      display: grid;
+      gap: 1em;
+
+      label {
+        display: grid;
+        gap: 0.5em;
+
+        input {
+          padding: 1em;
+          border-radius: 1em;
+          width: 40ch;
+        }
+      }
+
+      button {
+        padding: 1em;
+        background-color: var(--clr-primary);
+        font-size: 16px;
+        color: white;
+        border-radius: 1em;
+        border: none;
+        cursor: pointer;
+        margin-top: 1em;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+// ---------------- admin panel ----------------
+.admin-panel {
+  display: flex;
+
+  .container {
+    padding: 2em;
+
+    h1 {
+      margin-bottom: 1em;
+    }
+  }
+}
+
+// ---------------- admin nav ----------------
+.admin-nav {
+  padding: 2.5em 1.5em;
+  width: 25%;
+  height: 100vh;
+  background: #eee;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  a {
+    display: inline-block;
+    padding: 0.5em;
+  }
+}
+
+// ---------------- message ----------------
+.message {
+  position: absolute;
+  padding: 2em;
+  border-radius: 1em;
+  box-shadow: 0 0 10px 0 rgba($color: #000000, $alpha: 0.3);
+  background: #eee;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100px;
+}
+// ---------------- add product ----------------
+.add-product {
+  display: flex;
+
+  h1 {
+    margin-bottom: 1em;
+  }
+
+  .container {
+    padding: 2em;
+
+    form {
+      display: grid;
+      gap: 1em;
+
+      label {
+        display: grid;
+        gap: 0.5em;
+
+        input {
+          padding: 1em;
+          border-radius: 1em;
+        }
+      }
+
+      button {
+        padding: 1em;
+        border-radius: 1em;
+        background-color: var(--clr-primary);
+        border: none;
+        font-size: 16px;
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+}
+// ---------------- update product ----------------
+.update-product {
+  display: flex;
+
+  h1 {
+    margin-bottom: 1em;
+  }
+
+  .container {
+    padding: 3em;
+
+    ul {
+      li {
+        padding: 1em 2em;
+        background-color: #eee;
+        border-radius: 1em;
+        margin: 1em 0;
+        display: flex;
+        justify-content: space-between;
+
+        span {
+          display: flex;
+          gap: 2em;
+
+          a {
+            text-decoration: underline;
+            &:first-child {
+              color: var(--clr-primary);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+// ---------------- footer ----------------
+footer {
+  padding: 2em 1em;
+  background-color: var(--clr-primary);
+  text-align: center;
+  color: white;
+  margin-top: 4em;
+}
+
+// ---------------- container ----------------
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
